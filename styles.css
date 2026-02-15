@@ -87,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  padding: 12px 22px;
+  padding: 12px 12px;
 }
 
 .avatar {
@@ -134,6 +134,7 @@ button {
   border-radius: 9999px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
+  margin: 20px
 }
 
 button:hover {
