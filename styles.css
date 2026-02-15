@@ -5,8 +5,8 @@ body {
 
 @media (max-width: 600px) {
   .card {
-    width: 100%;            /* make card span almost full screen */
-    max-width: 100%;        /* prevent desktop max-width from applying */
+    width: 90%;            /* make card span almost full screen */
+    max-width: 90%;        /* prevent desktop max-width from applying */
     max-height: 60vh;       /* allow more height if needed */
     padding: 10px 15px;     /* small but not zero padding */
     font-size: 0.70rem;     /* smaller, readable text */
