@@ -6,16 +6,24 @@ body {
 @media (max-width: 600px) {
   .card {
     width: 90%;          /* nearly full width */
-    padding: 15px;       /* less padding */
-    font-size: 0.7rem;     /* smaller text */
+    max-height: 50vh;    /* smaller max height on mobile */
+    padding: 15px;
+    font-size: 1rem;
   }
 
   .image-row img {
-    width: 80%;           /* stack images and make them smaller */
-    max-width: 150px;
-    margin-bottom: 10px;  /* spacing if stacked */
+    width: 80%;
+    max-width: 120px;     /* make images smaller */
+    margin-bottom: 10px;  /* space when stacked */
+  }
+
+  button {
+    width: 90%;           /* make button fit mobile width */
+    font-size: 1rem;
+    padding: 10px;
   }
 }
+
 
 .image-row {
   display: flex;
@@ -48,17 +56,20 @@ body {
 }
 
 .card {
-  width: 60%;        /* default for desktop */
-  max-width: 600px;  /* optional limit */
+  width: 60%;
+  max-width: 600px;
+  max-height: 70vh;     /* limit card height to 70% of viewport */
+  overflow-y: auto;      /* scroll if content is too tall */
   padding: 20px;
   margin: 20px auto;
-  font-size: 1.2rem; /* default font size */
+  font-size: 1.2rem;
   text-align: center;
   background-color: #192734;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
   transition: all 0.3s ease;
 }
+
 
 .card:hover {
   transform: translateY(-4px);
