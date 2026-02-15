@@ -7,7 +7,7 @@ body {
   .card {
     width: 90%;          /* nearly full width */
     padding: 15px;       /* less padding */
-    font-size: 1rem;     /* smaller text */
+    font-size: 0.7rem;     /* smaller text */
   }
 
   .image-row img {
