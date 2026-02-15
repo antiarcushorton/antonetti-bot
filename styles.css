@@ -5,12 +5,12 @@ body {
 
 @media (max-width: 600px) {
   .card {
-    width: 100vw;         /* full viewport width */
-    max-width: 100vw;     /* override any desktop max-width */
-    padding: 10px 15px;   /* keep some padding */
-    font-size: 0.85rem;   /* smaller font for mobile */
-    max-height: 60vh;     /* allow scrolling for long quotes */
-    overflow-y: auto;
+    width: 100%;            /* make card span almost full screen */
+    max-width: 100%;        /* prevent desktop max-width from applying */
+    max-height: 60vh;       /* allow more height if needed */
+    padding: 10px 15px;     /* small but not zero padding */
+    font-size: 0.70rem;     /* smaller, readable text */
+    box-sizing: border-box; /* include padding in width */
   }
 
   .image-row img {
@@ -24,16 +24,8 @@ body {
     font-size: 1rem;
     padding: 10px;
   }
-
-  .header {
-    padding: 15px 10px; /* more padding on top/bottom and sides */
-    font-size: 1rem;    /* optional: shrink font for small screens */
-  }
 }
 
-.header {
-  padding: 0.5%; /* default padding for desktop */
-}
 
 .image-row {
   display: flex;
@@ -66,13 +58,13 @@ body {
 }
 
 .card {
-  width: 100vw;
+  width: 75%;
   max-width: 600px;
   max-height: 70vh;     /* limit card height to 70% of viewport */
   overflow-y: auto;      /* scroll if content is too tall */
   padding: 20px;
   margin: 20px auto;
-  font-size: 0.6rem;
+  font-size: 1.0rem;
   text-align: center;
   background-color: #192734;
   border-radius: 10px;
