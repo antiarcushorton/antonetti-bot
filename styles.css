@@ -7,8 +7,8 @@ body {
   .card {
     width: 95%;          /* nearly full width */
     max-height: 50vh;    /* smaller max height on mobile */
-    padding: 15px;
-    font-size: 1rem;
+    padding: 0px;
+    font-size: 0.7rem;
   }
 
   .image-row img {
