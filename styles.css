@@ -3,19 +3,33 @@ body {
   font-family: sans-serif;
 }
 
+@media (max-width: 600px) {
+  .image-row img {
+    width: 80%; /* stack large images on small screens */
+  }
+
+  .card {
+    width: 90%; /* make quote card fit smaller screens */
+    font-size: 1.1rem;
+  }
+}
+
 .image-row {
   display: flex;
-  justify-content: space-around; /* Even spacing */
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap; /* allows wrapping on small screens */
   margin-top: 20px;
+  gap: 10px; /* spacing between images */
 }
 
 .image-row img {
-  width: 200px; /* Adjust size */
+  width: 30%;       /* responsive width instead of fixed px */
+  max-width: 200px; /* optional max size */
   height: auto;
-  opacity: 0; /* Start invisible */
-  transition: opacity 1s ease-in; /* Smooth fade */
-  filter: grayscale(100%);   /* black & white */
+  opacity: 0;
+  transition: opacity 1s ease-in, filter 0.5s ease;
+  filter: grayscale(100%);
 }
 
 body {
