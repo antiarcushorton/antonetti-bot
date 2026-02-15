@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Antonetti Bot</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="image-row">
+            <img src="antonetti.jpg" alt="Photo 1" class="fade-image">
+            <img src="chernoff.jpg" alt="Photo 2" class="fade-image">
+            <img src="dolan.jpg" alt="Photo 3" class="fade-image">
+        </div>
+        <script src="images.js"></script>
+        <div class="card" id="card" onclick="openSource()">
+            <div class="quote" id="quote"></div>
+            <div class="attribution" id="attribution"></div>
+        </div>
+        <button id="new-quote-button">Hear from the fellas</button>
+
+        <script type="module">
+          import { quotes } from './quotes.js';
+
+          let lastIndex = quotes.findIndex(q =>
+            q.quote.includes("Enjoy him.")
+          );
+          let currentLink = "";
+
+          const card = document.getElementById("card");
+          const quoteElement = document.getElementById("quote");
+          const attributionElement = document.getElementById("attribution");
+          const newQuoteButton = document.getElementById("new-quote-button");
+
+          // Show a quote
+          function showQuote(index) {
+            const q = quotes[index];
+            quoteElement.innerText = q.quote;
+            attributionElement.innerText = q.attribution;
+            currentLink = q.link;
+          }
+
+          // Generate a new random quote
+          function newQuote() {
+            card.classList.add("fade-out");
+
+            setTimeout(() => {
+              let index;
+              do {
+                index = Math.floor(Math.random() * quotes.length);
+              } while (index === lastIndex);
+
+              lastIndex = index;
+
+              showQuote(index);
+
+              card.classList.remove("fade-out");
+            }, 400);
+          }
+
+          // Open the source link
+          function openSource() {
+            if (currentLink) {
+              window.open(currentLink, "_blank");
+            }
+          }
+
+          // Event listeners
+          card.addEventListener("click", openSource);
+          newQuoteButton.addEventListener("click", newQuote);
+
+          // Load the first quote immediately
+          showQuote(lastIndex);
+
+        </script>
+    </body>
+</html>
