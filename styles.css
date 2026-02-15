@@ -5,7 +5,7 @@ body {
 
 @media (max-width: 600px) {
   .card {
-    width: 90%;          /* nearly full width */
+    width: 95%;          /* nearly full width */
     max-height: 50vh;    /* smaller max height on mobile */
     padding: 15px;
     font-size: 1rem;
