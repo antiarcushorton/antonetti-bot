@@ -24,8 +24,16 @@ body {
     font-size: 1rem;
     padding: 10px;
   }
+
+  .header {
+    padding: 15px 10px; /* more padding on top/bottom and sides */
+    font-size: 1rem;    /* optional: shrink font for small screens */
+  }
 }
 
+.header {
+  padding: 0.5%; /* default padding for desktop */
+}
 
 .image-row {
   display: flex;
