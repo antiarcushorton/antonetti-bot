@@ -4,11 +4,13 @@ body {
 }
 
 /* Remove default link styling from your card */
-.card {
+/* Remove ALL default anchor styling */
+a.card {
+  display: block;
   width: 75%;
   max-width: 600px;
-  max-height: 70vh;     /* limit card height to 70% of viewport */
-  overflow-y: auto;      /* scroll if content is too tall */
+  max-height: 70vh;
+  overflow-y: auto;
   padding: 20px;
   margin: 20px auto;
   font-size: 1.0rem;
@@ -18,12 +20,20 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
   transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
-.card:link,
-.card:visited,
-.card:hover,
-.card:active,
-.card * {
+/* Override all link states explicitly */
+a.card:link,
+a.card:visited,
+a.card:hover,
+a.card:active {
+  text-decoration: none;
+  color: inherit;
+}
+/* Prevent underline on inner elements */
+a.card .quote,
+a.card .attribution {
   text-decoration: none;
   color: inherit;
 }
