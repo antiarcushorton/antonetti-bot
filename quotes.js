@@ -158,5 +158,10 @@ export const quotes = [
     quote: "\u201cI know we lost in the ALCS, but I didn\u2019t see a difference between the competitive level of those teams. I think potentially we could have won that series and had a team capable of winning the World Series.\u201d",
     attribution: "General Manager Mike Chernoff, April 2025, on the team's 2024 ALCS loss to the Yankees",
     link: "https://www.cleveland.com/guardians/2025/04/how-do-the-guardians-keep-beating-the-odds-the-week-in-baseball.html"
+  },
+  {
+    quote: "This is going to come down to the young players we have. The younger we got towards the end of last year, the better we played.",
+    attribution: "General Manager Mike Chernoff, February 2026, on the upcoming season",
+    link: "https://x.com/i/status/2024199801634689187"
   }
 ];
