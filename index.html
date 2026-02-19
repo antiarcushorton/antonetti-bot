@@ -14,18 +14,26 @@
         </div>
         <script src="images.js"></script>
         <h3 class="header">What do Chris Antonetti, Mike Chernoff, and Paul Dolan have to say during the offseason?</h3>
-        <div class="card" id="card" onclick="openSource()">
+        <a class="card" id="card" target="_blank" rel="noopener noreferrer">
             <div class="quote" id="quote"></div>
             <div class="attribution" id="attribution"></div>
-        </div>
+        </a>
         <button id="new-quote-button">Hear from the fellas</button>
 
         <script type="module">
           import { quotes } from './quotes.js';
 
+          // Store last 25 indices
+          let recentIndices = [];
+          
+          // Set first index and add to list
           let lastIndex = quotes.findIndex(q =>
             q.quote.includes("most boring")
           );
+          if (lastIndex !== -1) {
+            recentIndices.push(lastIndex);
+          }
+
           let currentLink = "";
 
           const card = document.getElementById("card");
@@ -39,6 +47,7 @@
             quoteElement.innerText = q.quote;
             attributionElement.innerText = q.attribution;
             currentLink = q.link;
+            card.href = currentLink;
           }
 
           // Generate a new random quote
@@ -47,11 +56,20 @@
 
             setTimeout(() => {
               let index;
+              // Keep picking until new quote not in list
               do {
                 index = Math.floor(Math.random() * quotes.length);
-              } while (index === lastIndex);
+              } while (recentIndices.includes(index));
 
               lastIndex = index;
+
+              // Add to recent list
+              recentIndices.push(index);
+
+              // Keep only last 25
+              if (recentIndices.length > 25) {
+                recentIndices.shift(); // removes oldest
+              }
 
               showQuote(index);
 
@@ -59,15 +77,7 @@
             }, 400);
           }
 
-          // Open the source link
-          function openSource() {
-            if (currentLink) {
-              window.open(currentLink, "_blank");
-            }
-          }
-
           // Event listeners
-          card.addEventListener("click", openSource);
           newQuoteButton.addEventListener("click", newQuote);
 
           // Load the first quote immediately

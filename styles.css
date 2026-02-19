@@ -3,6 +3,12 @@ body {
   font-family: sans-serif;
 }
 
+.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 @media (max-width: 600px) {
   .card {
     width: 90%;            /* make card span almost full screen */
