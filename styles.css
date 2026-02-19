@@ -3,9 +3,18 @@ body {
   font-family: sans-serif;
 }
 
-.card {
+/* Remove default link styling from your card */
+.card,
+.card:link,
+.card:visited,
+.card:hover,
+.card:active {
   text-decoration: none;
   color: inherit;
+}
+
+/* Ensure card layout does not show link text */
+.card {
   display: block;
 }
 
