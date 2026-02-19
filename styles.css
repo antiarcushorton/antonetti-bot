@@ -4,24 +4,14 @@ body {
 }
 
 /* Remove default link styling from your card */
+.card,
 .card:link,
-.card:visited {
-  color: inherit;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-.card:active {
+.card:visited,
+.card:hover,
+.card:active,
+.card * {
   text-decoration: none;
   color: inherit;
-}
-
-/* Ensure card layout does not show link text */
-.card {
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  display: block;
 }
 
 @media (max-width: 600px) {
